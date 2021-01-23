@@ -3,26 +3,16 @@ import { Layout, Row, Col, Typography, Space } from 'antd'
 import '../../styles/antd.less'
 
 const CustomLayout = ({ children }) => {
-
-  const { Title } = Typography
-  const { Footer, Header, Content } = Layout
+  const { Content } = Layout
   return (
     <Layout>
-      <Header className='layout-header'>
-        <Row style={{ height: '100%' }} align='middle'>
-          <Col >
-            <Title style={{ lineHeight: 0 }} level={2} type='secondary'>
-              Catálogo de Animes
-            </Title>
+      <Content style={{ padding: 24, minHeight: '100vh' }}>
+        <Row justify='center'>
+          <Col style={{ maxWidth: 1200 }}>
+            {children}
           </Col>
         </Row>
-      </Header>
-      <Content style={{ padding: 24 }}>
-        {children}
       </Content>
-      <Footer>
-        Footer
-      </Footer>
     </Layout >
   );
 }

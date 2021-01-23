@@ -5,16 +5,15 @@ import useSWR from 'swr'
 import { BASE_URL } from '../services/api'
 import axios from 'axios'
 
-// const fetcher = url => axios.get(url).then(res => res.data)
+const fetcher = url => axios.get(url).then(res => res.data)
 
 const Home = () => {
 
-  // const { data, error } = useSWR(`${BASE_URL}/anime`, fetcher)
+  const { data, error } = useSWR(`${BASE_URL}/anime`, fetcher)
 
-  // console.log(data)
   return (
     <Layout>
-      <HomeContent />
+      <HomeContent animes={data} />
     </Layout>
   )
 }

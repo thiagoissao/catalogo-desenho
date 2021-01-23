@@ -1,13 +1,20 @@
 import React from 'react';
-import { Row, Col } from 'react'
-import CardLoading from './CardLoading';
+import { Row, Col, Typography, Space } from 'antd'
+import AnimeCard from './AnimeCard';
 
-const Home = () => {
+const Home = ({ animes }) => {
+
+  if (!animes) {
+    return <Typography>Loading ...</Typography>
+  }
+
   return (
-    <Row>
-      <Col>
-        <CardLoading />
-      </Col>
+    <Row gutter={16} >
+      {animes.data.map(anime => (
+        <Col xs={24} xl={6}>
+          <AnimeCard anime={anime} />
+        </Col>
+      ))}
     </Row>
   );
 }
