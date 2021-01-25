@@ -1,6 +1,6 @@
 import React from 'react';
 import Error from '../../components/pure/Error'
-import { Col, Row, Typography, Image, Button } from 'antd'
+import { Col, Row, Typography, Image, Button, Spin } from 'antd'
 import { format, parse } from 'date-fns'
 import brLocale from 'date-fns/locale/pt-BR'
 import { useRouter } from 'next/router'
@@ -27,7 +27,13 @@ const Details = ({ anime, error }) => {
 
   if (!anime) {
     return (
-      <Typography>Loading ...</Typography>
+      <Col xs={24}>
+        <Row justify='center'>
+          <Col>
+            <Spin size='large' />
+          </Col>
+        </Row>
+      </Col>
     )
   }
 
