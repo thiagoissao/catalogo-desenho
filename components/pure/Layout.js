@@ -7,11 +7,10 @@ const CustomLayout = ({ children }) => {
   return (
     <Layout>
       <Header>
-
       </Header>
       <Content style={{ padding: 24, minHeight: '100vh' }}>
         <Row justify='center'>
-          <Col style={{ maxWidth: 1800 }}>
+          <Col style={{ maxWidth: 1800, width: '100%' }}>
             {children}
           </Col>
         </Row>

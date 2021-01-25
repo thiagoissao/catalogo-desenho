@@ -4,6 +4,9 @@ const withCSS = require("@zeit/next-css");
 
 
 module.exports = withCSS({
+  images: {
+    domains: ['media.kitsu.io']
+  },
   cssModules: true,
   cssLoaderOptions: {
     importLoaders: 1,
