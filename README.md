@@ -1,34 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Catálogo de Animes
 
-## Getting Started
+Este é um projeto que utiliza uma api externa que traz diversas informações sobre milhares de desenhos japoneses (animes).
 
-First, run the development server:
+## Como executar o projeto na sua máquina
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- Clone o repositório
+- Instale as dependências com `yarn` ou `yarn install`
+- Rode o projeto com `yarn dev`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Estrutura do projeto
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+O projeto é dividido em diversos diretórios, na raiz do projeto existem as seguintes divisões:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- **PAGES**: Pertence ao next.js e representa as rotas que são acessadas pela url do site desenvolvido. Para este projeto foram utilizados a rotas `/` e `animes/[id]`. A raiz mostra o catálogo de animes disponíveis, com paginação e filtro, enquanto a rota `animes/[id]` apresenta os detalhes do *anime* selecionado. <br> Um detalhe a ser destacado é que não foi utilizado as pré-renderizações que o next disponibiliza (getStaticPaths, getStaticProps e getServerSideProps) e sim, foi utilizado a biblioteca `SWR` para as buscas dos dados na api.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- **SERVICES**: Diretório para serviços externos, nesse projeto o único intuito dela foi para fazer requisições na api utilizando `axios`.
 
-## Learn More
+- **UTILS**: Este diretório armazena toda a configuração da aplicação que pode ser utilizada em diversos locais, para este app o único arquivo criado foram para as constantes presentes. Nela poderia ser armazenada também um arquivo de `strings` (Ex: placeholders, nome da aplicação, etc), `formatadores` (ex: formatador monetário) e utilitários em geral.
 
-To learn more about Next.js, take a look at the following resources:
+- **STYLES**: Estilização global para a aplicação e padronização no layout.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **COMPONENTS**: Aqui ficam todas os componentes react desenvolvidos, é possívelmente o diretório mais importante da aplicação. Este diretório foi dividido em outros diretórios na qual cada pasta representa uma "tela" desenvolvida. No caso deste projeto, existem as pastas `home`, que representa a tela inicial e a `details`, que representa a tela de detalhes do *anime*. Um terceiro diretório chamado `pure` armazena todos os componentes que são genéricos, isto é, possuem propriedades que podem ser utilizadas em diversos locais, como é o caso do componente `Layout`, que padroniza o tamanho máximo que uma tela pode ter e também implementa a estrutura padrão da tela.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Tempo de desenvolvimento
 
-## Deploy on Vercel
+Média de tempo gasto: ~ 10 horas
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Servidores Vercel
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Link de produção: [Catálogo de Animes](https://catalogo-desenho-84p82w55b.vercel.app/)

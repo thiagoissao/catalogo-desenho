@@ -36,7 +36,7 @@ const Home = ({
       <Row gutter={[32, 32]} >
         <Col xs={24}>
           <Row gutter={[8, 8]} justify='space-between'>
-            <Col xs={24} sm={12} xl={4}>
+            <Col xs={24} sm={8} md={6} xl={4}>
               <Input
                 allowClear
                 size='large'

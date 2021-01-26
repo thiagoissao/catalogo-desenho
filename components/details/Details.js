@@ -109,7 +109,7 @@ const Details = ({ anime, error }) => {
           <Col xs={24}>
             <Image
               style={{ borderRadius: 24 }}
-              height={400}
+              height={window.innerWidth < 800 ? 200 : 400}
               width='100%'
               preview={false}
               alt='Anime Banner'
